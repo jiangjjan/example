@@ -1,0 +1,78 @@
+spring:
+  security:
+    user:
+      password: 123456
+  datasource:
+    url: jdbc:mysql://192.168.2.2:3306/test?serverTimezone=UTC&useSSL=false&characterEncoding=UTF-8 
+    username: root
+    password: admin
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    initialization-mode:  always
+    schema:
+    - classpath:db/schema.sql
+    # data:
+    # - 
+  profiles:
+    active: windows
+  thymeleaf:
+    cache: false
+server:
+  port: 8080
+debug: true
+logging:
+  level: 
+    org:
+      apache:
+        ibatis: debug
+#日志格式
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.maven.springbootlearn.mybatis_demo.entity.**
+management:
+  server:
+    port: 9090
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: false
+    path: /swagger-ui.html
+---
+#保存文件，注意file和path同时存在时，file生效，保存在根目录下，可以在file中设置路径如/logs/log/test.log 
+logging:
+  file:
+    name: E:/log/springbootLog.log
+server:
+  servlet:
+    encoding:
+      force: true
+
+spring:
+  profiles: windows
+  redis: 
+    timeout: 0
+    database: 0
+#Redis服务器地址
+    host: 192.168.2.2
+#Redis服务器连接端口
+    port: 6379
+#Redis服务器连接密码（默认为空）
+    password:
+#连接池最大连接数（使用负值表示没有限制）
+    jedis:
+    # lettuce:
+      pool:
+        max-active: 10
+  #连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-wait: -1
+  #连接池中的最大空闲连接
+        max-idle: 8
+  #连接池中的最小空闲连接
+        min-idle: 0
+  cache:
+    redis:
+      time-to-live: 60000

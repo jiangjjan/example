@@ -1,0 +1,232 @@
+<!Doctype html>
+<html>
+<head>
+    <title>文件对比结果</title></head>
+<meta content="text/html" charset="UTF-8">
+<script src="https://how2j.cn/study/js/jquery/2.0.0/jquery.min.js"></script>
+<link href="https://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+<script src="https://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+<style>
+    div.categoryMenu{
+        width: 200px;
+        background-color: #e2e2e3;
+        margin-left: 20px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+    }
+    div.categoryMenu a{
+        color: #000;
+    }
+    div.categoryMenu a:hover{
+        color: lightskyblue;
+        text-decoration: none;
+    }
+    div.productsAsideCategorys{
+        width: 800px;
+        height: 510px;
+        background-color: white;
+        margin-left: 220px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+    }
+    div.productsAsideCategorys div.row{
+        margin: 20px 80px 0px 80px;
+    }
+    div.productsAsideCategorys div.row div.seperator{
+        margin-top: 20px;
+        border-bottom-style: dashed;
+        border-bottom-width: 1px;
+        border-bottom-color: #e7e7e7;
+    }
+    div.productsAsideCategorys a{
+        color: #999;
+        font-size: 14px;
+        margin: 8px;
+    }
+    div.productsAsideCategorys a:hover{
+        color: #C40000;
+        text-decoration: none;
+    }
+    div.eachCategory{
+        line-height: 30px;
+        padding-left: 10px;
+        font-size: 14px;
+    }
+    div.eachCategory span{
+        margin-right: 10px;
+    }
+    div.eachCategory:hover{
+        background-color: white;
+    }
+    .fileth{
+        color: #999;
+        font-size: 14px;
+        margin: 8px;
+    }
+</style>
+<script>
+    function showProductsAsideCategorys(cid){
+        $("div.eachCategory[cid="+cid+"]").css("background-color","white");
+        $("div.eachCategory[cid="+cid+"] div").css("color","#87CEFA");
+        $("div.productsAsideCategorys[cid="+cid+"]").show();
+    }
+
+    function hideProductsAsideCategorys(cid){
+        $("div.eachCategory[cid="+cid+"]").css("background-color","#e2e2e3");
+        $("div.eachCategory[cid="+cid+"] div").css("color","#000");
+        $("div.productsAsideCategorys[cid="+cid+"]").hide();
+    }
+
+    $(function(){
+        let eachCategory= $("div.eachCategory");
+
+        eachCategory.mouseenter(function(){
+            let cid = $(this).attr("cid");
+            showProductsAsideCategorys(cid);
+        });
+        eachCategory.mouseleave(function(){
+            let cid = $(this).attr("cid");
+            hideProductsAsideCategorys(cid);
+        });
+
+
+        $("div.productsAsideCategorys").mouseenter(function(){
+            let cid = $(this).attr("cid");
+            showProductsAsideCategorys(cid);
+        });
+        $("div.productsAsideCategorys").mouseleave(function(){
+            let cid = $(this).attr("cid");
+            hideProductsAsideCategorys(cid);
+        });
+    });
+</script>
+<body>
+
+<div class="categoryWithCarousel">
+    <div style="position: relative">
+        <div class="categoryMenu ">
+            <div class="eachCategory" cid="1">
+                <span class="glyphicon glyphicon-link"></span>
+                <a href="#nowhere">
+                    node1
+                </a>
+            </div>
+            <div class="eachCategory" cid="2">
+                <span class="glyphicon glyphicon-link"></span>
+                <a href="#nowhere">
+                    node2
+                </a>
+            </div>
+            <div class="eachCategory" cid="81">
+                <span class="glyphicon glyphicon-link"></span>
+                <a href="#nowhere">
+                    node3
+                </a>
+            </div>
+            <div class="eachCategory" cid="80">
+                <span class="glyphicon glyphicon-link"></span>
+                <a href="#nowhere">
+                    node4
+                </a>
+            </div>
+            <div class="eachCategory" cid="79">
+                <span class="glyphicon glyphicon-link"></span>
+                <a href="#nowhere">
+                    node5
+                </a>
+            </div>
+            <div class="eachCategory" cid="78">
+                <span class="glyphicon glyphicon-link"></span>
+                <a href="#nowhere">
+                    node6
+                </a>
+            </div>
+            <div class="eachCategory" cid="77">
+                <span class="glyphicon glyphicon-link"></span>
+                <a href="#nowhere">
+                    node7
+                </a>
+            </div>
+            <div class="eachCategory" cid="76">
+                <span class="glyphicon glyphicon-link"></span>
+                <a href="#nowhere">
+                    node8
+                </a>
+            </div>
+            <div class="eachCategory" cid="75">
+                <span class="glyphicon glyphicon-link"></span>
+                <a href="#nowhere">
+                    node9
+                </a>
+            </div>
+            <div class="eachCategory" cid="74">
+                <span class="glyphicon glyphicon-link"></span>
+                <a href="#nowhere">
+                    node10
+                </a>
+            </div>
+            <div class="eachCategory" cid="73">
+                <span class="glyphicon glyphicon-link"></span>
+                <a href="#nowhere">
+                    node11
+                </a>
+            </div>
+            <div class="eachCategory" cid="72">
+                <span class="glyphicon glyphicon-link"></span>
+                <a href="#nowhere">
+                    node12
+                </a>
+            </div>
+            <div class="eachCategory" cid="71">
+                <span class="glyphicon glyphicon-link"></span>
+                <a href="#nowhere">
+                    node13
+                </a>
+            </div>
+            <div class="eachCategory" cid="69">
+                <span class="glyphicon glyphicon-link"></span>
+                <a href="#nowhere">
+                    node14
+                </a>
+            </div>
+            <div class="eachCategory" cid="68">
+                <span class="glyphicon glyphicon-link"></span>
+                <a href="#nowhere">
+                    node15
+                </a>
+            </div>
+            <div class="eachCategory" cid="64">
+                <span class="glyphicon glyphicon-link"></span>
+                <a href="#nowhere">
+                    node16
+                </a>
+            </div>
+            <div class="eachCategory" cid="60">
+                <span class="glyphicon glyphicon-link"></span>
+                <a href="#nowhere">
+                    node17
+                </a>
+            </div>
+        </div>
+    </div>
+    <div style="position: relative;left: 0;top: 0;">
+        <div class="productsAsideCategorys" cid="1">
+            <div class="row ">
+                <div class="fileth">文件差异</div>
+                <div class="seperator"></div>
+            </div>
+        </div>
+        <div class="productsAsideCategorys" cid="2">
+            <div class="row ">
+                <div class="fileth">文件差异11</div>
+                <div class="seperator"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
