@@ -6,7 +6,7 @@ import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 
 public class RoutingDataSource extends AbstractRoutingDataSource {
 
-    private static ThreadLocal<String> datasourceContext = new ThreadLocal<>();
+    private static final ThreadLocal<String> datasourceContext = new ThreadLocal<>();
 
     @Override
     protected Object determineCurrentLookupKey() {
